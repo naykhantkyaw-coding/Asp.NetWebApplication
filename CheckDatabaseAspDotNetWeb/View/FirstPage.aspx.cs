@@ -1,4 +1,5 @@
 ﻿using CheckDatabaseAspDotNetWeb.Controller;
+using CheckDatabaseAspDotNetWeb.Controller.GetServerName;
 using CheckDatabaseAspDotNetWeb.Model;
 using System;
 using System.Collections.Generic;
@@ -18,8 +19,8 @@ namespace CheckDatabaseAspDotNetWeb.View
 
         protected void GetServerName()
         {
-            GetServerNameController controller = new GetServerNameController();
-            var result = controller.GetServerName();
+            BL_GetServerName getServerName = new BL_GetServerName();
+            var result = getServerName.GetServerName();
             lblServerName.Text = result;
         }
     }

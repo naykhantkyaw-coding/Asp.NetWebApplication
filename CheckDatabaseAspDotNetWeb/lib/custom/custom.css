@@ -8,6 +8,8 @@
     font-size: 2em;
 }
 
+
+
     .ml6 .text-wrapper {
         position: relative;
         display: inline-block;
@@ -22,3 +24,9 @@
         line-height: 1em;
         color: white;
     }
+
+.serVerName {
+    font-size: 2em;
+    line-height: 1em;
+    color: white;
+}
