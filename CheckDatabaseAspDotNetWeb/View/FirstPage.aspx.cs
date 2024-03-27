@@ -1,5 +1,6 @@
 ﻿using CheckDatabaseAspDotNetWeb.Controller;
 using CheckDatabaseAspDotNetWeb.Controller.GetServerName;
+using CheckDatabaseAspDotNetWeb.Controller.GetTableName;
 using CheckDatabaseAspDotNetWeb.Model;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace CheckDatabaseAspDotNetWeb.View
 {
     public partial class FirstPage : System.Web.UI.Page
     {
+        public bool isEnterServer = false;
         protected void Page_Load(object sender, EventArgs e)
         {
             GetServerName();
@@ -19,9 +21,24 @@ namespace CheckDatabaseAspDotNetWeb.View
 
         protected void GetServerName()
         {
-            BL_GetServerName getServerName = new BL_GetServerName();
+            BL_GetServerNameController getServerName = new BL_GetServerNameController();
             var result = getServerName.GetServerName();
             lblServerName.Text = result;
+        }
+
+        protected void btnYes_Click(object sender, EventArgs e)
+        {
+            isEnterServer = true;
+            if (isEnterServer)
+            {
+                GetTableName();
+            }
+        }
+
+        protected List<TableNamesModel> GetTableName()
+        {
+            var result = DA_GetTableNameController.GetTableNames();
+            return result.Data;
         }
     }
 }

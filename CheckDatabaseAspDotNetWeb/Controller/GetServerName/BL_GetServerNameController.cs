@@ -6,12 +6,12 @@ using System.Web;
 
 namespace CheckDatabaseAspDotNetWeb.Controller.GetServerName
 {
-    public class BL_GetServerName
+    public class BL_GetServerNameController
     {
         public string GetServerName()
         {
             string serverName = string.Empty;
-            ServerInfoResponseModel result = DA_GetServerName.GetServerName();
+            ServerInfoResponseModel result = DA_GetServerNameController.GetServerName();
             if (result.Data != null && result.Response.IsSuccess)
             {
                 foreach (var item in result.Data)

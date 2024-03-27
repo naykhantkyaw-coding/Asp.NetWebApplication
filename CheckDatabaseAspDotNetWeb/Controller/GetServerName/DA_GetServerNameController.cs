@@ -7,7 +7,7 @@ using System.Web;
 
 namespace CheckDatabaseAspDotNetWeb.Controller.GetServerName
 {
-    public class DA_GetServerName
+    public class DA_GetServerNameController
     {
         public static ServerInfoResponseModel GetServerName()
         {
