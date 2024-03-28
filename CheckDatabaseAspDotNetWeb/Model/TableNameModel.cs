@@ -7,6 +7,8 @@ namespace CheckDatabaseAspDotNetWeb.Model
 {
     public class TableNameModel
     {
+        public int No { get; set; }
+        public string TableName { get; set; }
     }
 
     public class TableNameRequestModel
@@ -14,8 +16,9 @@ namespace CheckDatabaseAspDotNetWeb.Model
         public string DbName { get; set; }
     }
 
+
     public class TableNameResponseModel : BaseResponseModel
     {
-
+        public List<TableNameModel> Data { get; set; }
     }
 }
