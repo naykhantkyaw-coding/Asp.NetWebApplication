@@ -40,5 +40,11 @@ namespace CheckDatabaseAspDotNetWeb.View
             var result = DA_GetDbNameController.GetDbNames();
             return result.Data;
         }
+
+        protected void btnEnter_Click(object sender, EventArgs e)
+        {
+            TableNameRequestModel model = new TableNameRequestModel();
+            model.DbName = txtdbName.Text;
+        }
     }
 }

@@ -61,7 +61,7 @@
             </div>
         </div>
         <div class="text-center mt-3">
-            <asp:Button ID="btnEnter" runat="server" Text="Enter" CssClass="btn btn-sm btn-secondary fw-bold mb-3" />
+            <asp:Button ID="btnEnter" runat="server" Text="Enter" CssClass="btn btn-sm btn-secondary fw-bold mb-3" OnClick="btnEnter_Click" />
         </div>
         <%} %>
     </form>
