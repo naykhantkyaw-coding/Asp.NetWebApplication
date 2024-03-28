@@ -5,14 +5,14 @@ using System.Web;
 
 namespace CheckDatabaseAspDotNetWeb.Model
 {
-    public class TableNamesModel
+    public class DbNamesModel
     {
         public int No { get; set; }
-        public string TableName { get; set; }
+        public string DbName { get; set; }
     }
 
-    public class TableNameResponseModel : BaseResponseModel
+    public class DbNameResponseModel : BaseResponseModel
     {
-        public List<TableNamesModel> Data { get; set; }
+        public List<DbNamesModel> Data { get; set; }
     }
 }

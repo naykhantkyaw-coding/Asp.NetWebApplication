@@ -80,10 +80,11 @@
   <ItemGroup>
     <Compile Include="Controller\GetServerName\BL_GetServerNameController.cs" />
     <Compile Include="Controller\GetServerName\DA_GetServerNameController.cs" />
+    <Compile Include="Controller\GetDbName\DA_GetDbNameController.cs" />
     <Compile Include="Controller\GetTableName\DA_GetTableNameController.cs" />
     <Compile Include="Model\BaseResponseModel.cs" />
     <Compile Include="Model\ServerNameModel.cs" />
-    <Compile Include="Model\TableNamesModel.cs" />
+    <Compile Include="Model\DbNamesModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\FirstPage.aspx.cs">
       <DependentUpon>FirstPage.aspx</DependentUpon>

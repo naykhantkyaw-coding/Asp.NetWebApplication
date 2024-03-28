@@ -19,31 +19,50 @@
             <asp:Button ID="btnNo" runat="server" Text="No" CssClass="btn btn-sm btn-secondary fw-bold" />
             <asp:Button ID="btnYes" runat="server" Text="Yes" CssClass="btn btn-sm btn-secondary fw-bold" OnClick="btnYes_Click" />
         </div>
-    </form>
 
 
-    <div class="mt-4 d-flex justify-content-center">
-        <div>
-            <%if (isEnterServer)
-                {%>
-            <table class="table tbl-sm table-secondary">
-                <thead>
-                    <tr>
-                        <td class="fw-bold">No</td>
-                        <td class="fw-bold">Table Name</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <%foreach (var obj in GetTableName())
-                        {  %>
-                    <tr>
-                        <td><%=obj.No %></td>
-                        <td><%=obj.TableName %></td>
-                    </tr>
-                    <%} %>
-                </tbody>
-            </table>
-            <% } %>
+
+        <div class="mt-4 d-flex justify-content-center">
+            <div>
+                <%if (isEnterServer)
+                    {%>
+                <table class="table tbl-sm table-secondary">
+                    <thead>
+                        <tr>
+                            <td class="fw-bold">No</td>
+                            <td class="fw-bold">Table Name</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%foreach (var obj in GetDbName())
+                            {  %>
+                        <tr>
+                            <td><%=obj.No %></td>
+                            <td><%=obj.DbName %></td>
+                        </tr>
+                        <%} %>
+                    </tbody>
+                </table>
+                <% }%>
+            </div>
         </div>
-    </div>
+
+        <%if (isEnterServer)
+            {  %>
+        <h4 class="text-center text-white mt-5">Please enter database name.</h4>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-4">
+                    <div class="input-group ">
+                        <span class="input-group-text fw-bold" id="basic-addon1">Db Name :</span>
+                        <asp:TextBox CssClass="form-control" ID="txtdbName" runat="server"></asp:TextBox>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-3">
+            <asp:Button ID="btnEnter" runat="server" Text="Enter" CssClass="btn btn-sm btn-secondary fw-bold mb-3" />
+        </div>
+        <%} %>
+    </form>
 </asp:Content>

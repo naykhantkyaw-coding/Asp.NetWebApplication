@@ -31,13 +31,13 @@ namespace CheckDatabaseAspDotNetWeb.View
             isEnterServer = true;
             if (isEnterServer)
             {
-                GetTableName();
+                GetDbName();
             }
         }
 
-        protected List<TableNamesModel> GetTableName()
+        protected List<DbNamesModel> GetDbName()
         {
-            var result = DA_GetTableNameController.GetTableNames();
+            var result = DA_GetDbNameController.GetDbNames();
             return result.Data;
         }
     }
