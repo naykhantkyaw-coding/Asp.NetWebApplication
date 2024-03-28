@@ -30,7 +30,7 @@
                     <thead>
                         <tr>
                             <td class="fw-bold">No</td>
-                            <td class="fw-bold">Table Name</td>
+                            <td class="fw-bold">Database Name</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -55,13 +55,37 @@
                 <div class="col-4">
                     <div class="input-group ">
                         <span class="input-group-text fw-bold" id="basic-addon1">Db Name :</span>
-                        <asp:TextBox CssClass="form-control" ID="txtdbName" runat="server"></asp:TextBox>
+                        <asp:TextBox CssClass="form-control" ID="txtdbName" runat="server" required></asp:TextBox>
                     </div>
                 </div>
             </div>
         </div>
         <div class="text-center mt-3">
             <asp:Button ID="btnEnter" runat="server" Text="Enter" CssClass="btn btn-sm btn-secondary fw-bold mb-3" OnClick="btnEnter_Click" />
+        </div>
+        <%}%>
+        <%if (isEnterDb)
+            {  %>
+        <div class="d-flex justify-content-center">
+            <div>
+                <table class="table tbl-sm table-secondary">
+                    <thead>
+                        <tr>
+                            <td class="fw-bold">No</td>
+                            <td class="fw-bold">Table Name</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%foreach (var obj in GetTableName())
+                            {  %>
+                        <tr>
+                            <td><%=obj.No %></td>
+                            <td><%=obj.TableName %></td>
+                        </tr>
+                        <%} %>
+                    </tbody>
+                </table>
+            </div>
         </div>
         <%} %>
     </form>

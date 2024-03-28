@@ -21,7 +21,7 @@ namespace CheckDatabaseAspDotNetWeb.Controller.GetTableName
                 string serverName = blGetServerName.GetServerName();
                 if (reqModel.DbName != null && serverName != null)
                 {
-                    connectionString = $"Data Source = {serverName};Initial Catlog ={reqModel.DbName};Integrated Security = true;";
+                    connectionString = $"Data Source = {serverName};Initial Catalog ={reqModel.DbName};Integrated Security = true;";
                 }
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
@@ -34,8 +34,8 @@ namespace CheckDatabaseAspDotNetWeb.Controller.GetTableName
                             while (reader.Read())
                             {
                                 lstTableName.Add(new TableNameModel { No = i, TableName = reader[2].ToString() });
+                                i++;
                             }
-                            i++;
                             model.Data = lstTableName;
                         }
                     }

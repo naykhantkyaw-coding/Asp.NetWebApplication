@@ -14,6 +14,7 @@ namespace CheckDatabaseAspDotNetWeb.View
     public partial class FirstPage : System.Web.UI.Page
     {
         public bool isEnterServer = false;
+        public bool isEnterDb = false;
         protected void Page_Load(object sender, EventArgs e)
         {
             GetServerName();
@@ -43,8 +44,26 @@ namespace CheckDatabaseAspDotNetWeb.View
 
         protected void btnEnter_Click(object sender, EventArgs e)
         {
-            TableNameRequestModel model = new TableNameRequestModel();
-            model.DbName = txtdbName.Text;
+            isEnterDb = true;
+            isEnterServer = true;
+            if (isEnterDb)
+            {
+                GetTableName();
+            }
+
+        }
+
+        protected List<TableNameModel> GetTableName()
+        {
+            TableNameResponseModel model = new TableNameResponseModel();
+            if (isEnterDb)
+            {
+                TableNameRequestModel reqModel = new TableNameRequestModel();
+                reqModel.DbName = txtdbName.Text;
+                model = DA_GetTableNameController.GetTableNames(reqModel);
+            }
+
+            return model.Data;
         }
     }
 }
