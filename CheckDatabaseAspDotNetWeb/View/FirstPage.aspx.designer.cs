@@ -15,15 +15,6 @@ namespace CheckDatabaseAspDotNetWeb.View
     {
 
         /// <summary>
-        /// lblServerName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblServerName;
-
-        /// <summary>
         /// submitForm control.
         /// </summary>
         /// <remarks>
@@ -31,6 +22,15 @@ namespace CheckDatabaseAspDotNetWeb.View
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm submitForm;
+
+        /// <summary>
+        /// lblServerName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblServerName;
 
         /// <summary>
         /// btnNo control.
