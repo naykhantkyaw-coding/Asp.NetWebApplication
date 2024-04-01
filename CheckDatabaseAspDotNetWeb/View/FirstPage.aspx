@@ -91,6 +91,10 @@
                         </table>
                     </div>
                 </div>
+                <div>
+                    <asp:LinkButton ID="linkbtn" CssClass="btn btn-sm btn-primary" href="SecondPage.aspx"
+                        runat="server">Please Enter to continue to modified table data.</asp:LinkButton>
+                </div>
                 <%} %>
             </div>
         </div>

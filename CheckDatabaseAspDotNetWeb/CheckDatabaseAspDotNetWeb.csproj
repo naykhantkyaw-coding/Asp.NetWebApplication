@@ -74,7 +74,23 @@
     <Content Include="lib\font-awesome\css\all.min.css" />
     <Content Include="lib\font-awesome\js\all.min.js" />
     <Content Include="lib\jquery\jquery.min.js" />
+    <Content Include="lib\Theme\css\sb-admin-2.css" />
+    <Content Include="lib\Theme\css\sb-admin-2.min.css" />
+    <Content Include="lib\Theme\img\undraw_posting_photo.svg" />
+    <Content Include="lib\Theme\img\undraw_profile.svg" />
+    <Content Include="lib\Theme\img\undraw_profile_1.svg" />
+    <Content Include="lib\Theme\img\undraw_profile_2.svg" />
+    <Content Include="lib\Theme\img\undraw_profile_3.svg" />
+    <Content Include="lib\Theme\img\undraw_rocket.svg" />
+    <Content Include="lib\Theme\js\demo\chart-area-demo.js" />
+    <Content Include="lib\Theme\js\demo\chart-bar-demo.js" />
+    <Content Include="lib\Theme\js\demo\chart-pie-demo.js" />
+    <Content Include="lib\Theme\js\demo\datatables-demo.js" />
+    <Content Include="lib\Theme\js\sb-admin-2.js" />
+    <Content Include="lib\Theme\js\sb-admin-2.min.js" />
     <Content Include="View\FirstPage.aspx" />
+    <Content Include="View\SecondPage.aspx" />
+    <Content Include="View\ThemeForm.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -94,6 +110,27 @@
     <Compile Include="View\FirstPage.aspx.designer.cs">
       <DependentUpon>FirstPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\SecondPage.aspx.cs">
+      <DependentUpon>SecondPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\SecondPage.aspx.designer.cs">
+      <DependentUpon>SecondPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Theme.Master.cs">
+      <DependentUpon>Theme.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Theme.Master.designer.cs">
+      <DependentUpon>Theme.Master</DependentUpon>
+    </Compile>
+    <Compile Include="View\ThemeForm.aspx.cs">
+      <DependentUpon>ThemeForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ThemeForm.aspx.designer.cs">
+      <DependentUpon>ThemeForm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\View.Master.cs">
       <DependentUpon>View.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -108,6 +145,7 @@
     <Content Include="lib\bootstrap\js\bootstrap.min.js.map" />
     <None Include="packages.config" />
     <Content Include="View\View.Master" />
+    <Content Include="View\Theme.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
