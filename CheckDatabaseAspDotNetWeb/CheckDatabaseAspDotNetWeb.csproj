@@ -1757,6 +1757,7 @@
     <Content Include="lib\vendor\jquery\jquery.min.js" />
     <Content Include="lib\vendor\jquery\jquery.slim.js" />
     <Content Include="lib\vendor\jquery\jquery.slim.min.js" />
+    <Content Include="View\EnterDbThemeForm.aspx" />
     <Content Include="View\FirstPage.aspx" />
     <Content Include="View\SecondPage.aspx" />
     <Content Include="View\ThemeForm.aspx" />
@@ -1772,6 +1773,13 @@
     <Compile Include="Model\DbNamesModel.cs" />
     <Compile Include="Model\TableNameModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\EnterDbThemeForm.aspx.cs">
+      <DependentUpon>EnterDbThemeForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\EnterDbThemeForm.aspx.designer.cs">
+      <DependentUpon>EnterDbThemeForm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\FirstPage.aspx.cs">
       <DependentUpon>FirstPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
