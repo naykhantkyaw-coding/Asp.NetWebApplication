@@ -7,8 +7,8 @@
     <title></title>
 
     <%--CSS--%>
-    <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="../lib/font-awesome/css/all.min.css" rel="stylesheet" />
+    <link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../lib/font-awesome/css/all.min.css" rel="stylesheet" />
 
     <%--Custom CSS--%>
     <link href="../lib/custom/custom.css" rel="stylesheet" />
@@ -18,17 +18,17 @@
 </head>
 
 <body>
-   
+
     <div class="container">
         <asp:ContentPlaceHolder ID="body" runat="server">
         </asp:ContentPlaceHolder>
     </div>
 
     <%--javascripts--%>
-    <script src="../lib/jquery/jquery.min.js"></script>
-    <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../lib/font-awesome/js/all.min.js"></script>
+    <script src="../../lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../lib/font-awesome/js/all.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-    <script src="../lib/custom/custom.js"></script>
+    <script src="../../lib/custom/custom.js"></script>
 </body>
 </html>
