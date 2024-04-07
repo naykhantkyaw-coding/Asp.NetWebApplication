@@ -14,6 +14,7 @@ namespace CheckDatabaseAspDotNetWeb.Model
     public class TableNameRequestModel
     {
         public string DbName { get; set; }
+        public string TableName { get; set; }
     }
 
 

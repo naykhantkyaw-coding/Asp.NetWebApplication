@@ -1764,11 +1764,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\GetData\DA_GetDataController.cs" />
     <Compile Include="Controller\GetServerName\BL_GetServerNameController.cs" />
     <Compile Include="Controller\GetServerName\DA_GetServerNameController.cs" />
     <Compile Include="Controller\GetDbName\DA_GetDbNameController.cs" />
     <Compile Include="Controller\GetTableName\DA_GetTableNameController.cs" />
     <Compile Include="Model\BaseResponseModel.cs" />
+    <Compile Include="Model\DynamicDataModel.cs" />
     <Compile Include="Model\ServerNameModel.cs" />
     <Compile Include="Model\DbNamesModel.cs" />
     <Compile Include="Model\TableNameModel.cs" />
