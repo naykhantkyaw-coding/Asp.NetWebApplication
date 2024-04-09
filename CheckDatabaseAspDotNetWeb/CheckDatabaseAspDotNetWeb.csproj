@@ -1760,6 +1760,7 @@
     <Content Include="View\ThemeView\EnterDbThemeForm.aspx" />
     <Content Include="View\SimpleView\FirstPage.aspx" />
     <Content Include="View\SimpleView\SecondPage.aspx" />
+    <Content Include="View\ThemeView\EnterTable.aspx" />
     <Content Include="View\ThemeView\ThemeForm.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -1795,6 +1796,13 @@
     </Compile>
     <Compile Include="View\SimpleView\SecondPage.aspx.designer.cs">
       <DependentUpon>SecondPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ThemeView\EnterTable.aspx.cs">
+      <DependentUpon>EnterTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ThemeView\EnterTable.aspx.designer.cs">
+      <DependentUpon>EnterTable.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\ThemeView\Theme.Master.cs">
       <DependentUpon>Theme.Master</DependentUpon>
