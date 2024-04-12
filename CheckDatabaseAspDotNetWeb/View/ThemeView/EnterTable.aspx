@@ -12,10 +12,10 @@
             </div>
             <div class="input-group mb-3 px-2">
                 <span class="input-group-text" id="basic-addon1">Table Name : </span>
-                <asp:TextBox ID="textTableName" CssClass="form-control" runat="server" required></asp:TextBox>
+                <asp:TextBox ID="txtTableName" CssClass="form-control" runat="server" required></asp:TextBox>
             </div>
             <div class="mb-2">
-                <asp:Button ID="btnTableEnter" CssClass="btn btn-sm btn-primary px-3 fw-bolder" runat="server" Text="Enter" />
+                <asp:Button ID="btnEnterTable" CssClass="btn btn-sm btn-primary px-3 fw-bolder" OnClick="btnEnterTable_Click" runat="server" Text="Enter" />
             </div>
         </div>
     </form>

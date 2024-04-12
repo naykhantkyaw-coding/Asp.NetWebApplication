@@ -33,21 +33,21 @@ namespace CheckDatabaseAspDotNetWeb.View.ThemeView
         protected global::System.Web.UI.WebControls.TextBox txtDbName;
 
         /// <summary>
-        /// textTableName control.
+        /// txtTableName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textTableName;
+        protected global::System.Web.UI.WebControls.TextBox txtTableName;
 
         /// <summary>
-        /// btnTableEnter control.
+        /// btnEnterTable control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnTableEnter;
+        protected global::System.Web.UI.WebControls.Button btnEnterTable;
     }
 }
