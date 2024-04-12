@@ -1,5 +1,6 @@
 ﻿using CheckDatabaseAspDotNetWeb.Controller.GetServerName;
 using CheckDatabaseAspDotNetWeb.Model;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -28,13 +29,27 @@ namespace CheckDatabaseAspDotNetWeb.Controller.GetData
                     con.Open();
                     if (reqModel.TableName != null)
                     {
-                        using (SqlCommand cmd = new SqlCommand($"select * fromt {reqModel.TableName}", con))
+                        using (SqlCommand cmd = new SqlCommand($"select * from {reqModel.TableName}", con))
                         {
                             using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
                             {
                                 DataTable dt = new DataTable();
                                 adapter.Fill(dt);
-                                model.Data = dt;
+                                List<string> headers = new List<string>();
+                                List<string> data = new List<string>();
+                                //model.Data = JsonConvert.SerializeObject(dt, Formatting.Indented);
+                                foreach (DataRow r in dt.Rows)
+                                {
+                                    foreach (DataColumn c in dt.Columns)
+                                    {
+                                        headers.Add(c.ColumnName);
+                                        data.Add(r[c].ToString());
+                                    }
+                                }
+                                model.Headers = headers;
+                                model.Headers = model.Headers.Distinct().ToList();
+                                model.Data = data;
+
                             }
                         }
                     }
