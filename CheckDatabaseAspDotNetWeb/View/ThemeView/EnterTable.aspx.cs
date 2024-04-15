@@ -4,6 +4,7 @@ using CheckDatabaseAspDotNetWeb.Model;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,6 +16,8 @@ namespace CheckDatabaseAspDotNetWeb.View.ThemeView
     public partial class EnterTable : System.Web.UI.Page
     {
         public bool isEnterTable;
+        public List<string> testingData;
+        public List<string> testingresult;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -23,18 +26,21 @@ namespace CheckDatabaseAspDotNetWeb.View.ThemeView
         protected void btnEnterTable_Click(object sender, EventArgs e)
         {
             isEnterTable = true;
-            GetData(isEnterTable, txtDbName.Text, txtTableName.Text);
+           var data = GetData(isEnterTable, txtDbName.Text, txtTableName.Text);
+            testingData = data.Headers;
+            testingresult = data.Data;
+
         }
 
-        protected void GetData(bool isEnterTable, string dbName, string tableName)
+        protected DynamicDataResponseModel GetData(bool isEnterTable = false, string dbName = null, string tableName = null)
         {
+            DynamicDataResponseModel model = new DynamicDataResponseModel();
             if (isEnterTable)
             {
-                Dictionary<string, object> dd = new Dictionary<string, object>();
                 TableNameRequestModel reqModel = new TableNameRequestModel();
                 reqModel.DbName = dbName;
                 reqModel.TableName = tableName;
-                var model = DA_GetDataController.GetData(reqModel);
+                var result = DA_GetDataController.GetData(reqModel);
                 //var jsonString = JsonConvert.DeserializeObject<>(model.Data);
                 //var obj = JObject.Parse(model.Data);
                 //var result = obj.Descendants()
@@ -47,8 +53,9 @@ namespace CheckDatabaseAspDotNetWeb.View.ThemeView
                 //{
                 //    dd.Add(item.Key, item.Value);
                 //}
+                model = result;
             }
-
+            return model;
         }
     }
 }
