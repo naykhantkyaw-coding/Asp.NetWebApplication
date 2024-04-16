@@ -32,20 +32,15 @@
                                 <%foreach (var result in testingData)
                                     {  %>
                                 <th><%=result %></th>
-                                <%} %>
+                                <%} %><a href="EnterTable.aspx">EnterTable.aspx</a>
                             </tr>
                         </thead>
                         <tbody>
 
+                            <%for (int i = 1; i <= testingData.Count ; i++)
+                                {
 
-                            <%foreach (var tt in testingresult)
-                                {  %>
-                            <tr>
-                                <td><%=tt %></td>
-                            </tr>
-                            <%} %>
-
-
+                                } %>
                             <%-- <%foreach (var result in testingData)
                           {  %>
                       <tr>

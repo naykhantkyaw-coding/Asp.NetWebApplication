@@ -27,8 +27,8 @@ namespace CheckDatabaseAspDotNetWeb.View.ThemeView
         {
             isEnterTable = true;
            var data = GetData(isEnterTable, txtDbName.Text, txtTableName.Text);
-            testingData = data.Headers;
-            testingresult = data.Data;
+            //testingData = data.Headers;
+            //testingresult = data.Data;
 
         }
 
@@ -41,6 +41,13 @@ namespace CheckDatabaseAspDotNetWeb.View.ThemeView
                 reqModel.DbName = dbName;
                 reqModel.TableName = tableName;
                 var result = DA_GetDataController.GetData(reqModel);
+                var jsonString = result.Data;
+
+                var de = new DynamicTesteingModel
+                {
+                    Data = JsonConvert.DeserializeObject<List<dynamic>>(jsonString)
+                };
+
                 //var jsonString = JsonConvert.DeserializeObject<>(model.Data);
                 //var obj = JObject.Parse(model.Data);
                 //var result = obj.Descendants()
@@ -59,3 +66,5 @@ namespace CheckDatabaseAspDotNetWeb.View.ThemeView
         }
     }
 }
+
+
