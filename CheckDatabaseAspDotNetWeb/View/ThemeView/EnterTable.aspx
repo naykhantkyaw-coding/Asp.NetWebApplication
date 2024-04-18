@@ -58,4 +58,10 @@
     </form>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="jsScript" runat="server">
+     <script>
+     new DataTable('#dataTableName', {
+         pageLength: 4,
+         lengthChange: false
+     });
+     </script>
 </asp:Content>
