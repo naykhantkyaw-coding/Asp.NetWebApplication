@@ -16,6 +16,7 @@
         rel="stylesheet">
     <link href="../../lib/Theme/css/sb-admin-2.min.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/2.0.3/css/dataTables.bootstrap5.css" rel="stylesheet" />
+   <script src="https://kit.fontawesome.com/09bb0d0162.js" crossorigin="anonymous"></script>
 
 
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -407,6 +408,7 @@
     <script src="../../lib/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../../lib/vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="../../lib/Theme/js/sb-admin-2.min.js"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
     <script src="https://cdn.datatables.net/2.0.3/js/dataTables.bootstrap5.js"></script>

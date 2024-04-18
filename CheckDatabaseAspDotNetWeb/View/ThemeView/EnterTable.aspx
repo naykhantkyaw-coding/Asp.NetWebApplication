@@ -33,12 +33,14 @@
                                     {  %>
                                 <th><%=result %></th>
                                 <%} %>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             <%int rowCount = Datas.Count / Headers.Count; %>
                             <%for (int i = 0; i < rowCount; i++)
-                                { %>
+                                {
+                                    string itemId = Datas[i * Headers.Count]; %>
                             <tr>
                                 <%for (int j = 0; j < Headers.Count; j++)
                                     { %>
@@ -47,6 +49,10 @@
 
 
                                 <%} %>
+                                <td>
+                                    <a href="EditForm.aspx?id=<%=itemId %>"><i class="fa-solid fa-pen-to-square"></i> Edit</a> |
+                                    <a href="#"><i class="fa-solid fa-trash" style="color: #ee1127;"></i> Delete</a>
+                                </td>
                             </tr>
                             <%} %>
                         </tbody>

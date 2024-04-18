@@ -40,6 +40,9 @@ namespace CheckDatabaseAspDotNetWeb.View.ThemeView
                 reqModel.DbName = dbName;
                 reqModel.TableName = tableName;
                 var result = DA_GetDataController.GetData(reqModel);
+
+                #region Unused Code🚀
+
                 //var jsonString = result.Data;
 
                 //var de = new DynamicTesteingModel
@@ -60,6 +63,9 @@ namespace CheckDatabaseAspDotNetWeb.View.ThemeView
                 //{
                 //    dd.Add(item.Key, item.Value);
                 //}
+
+                #endregion
+
                 model = result;
             }
             return model;
