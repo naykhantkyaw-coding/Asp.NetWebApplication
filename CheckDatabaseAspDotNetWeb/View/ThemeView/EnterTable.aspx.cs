@@ -16,8 +16,8 @@ namespace CheckDatabaseAspDotNetWeb.View.ThemeView
     public partial class EnterTable : System.Web.UI.Page
     {
         public bool isEnterTable;
-        public List<string> testingData;
-        public List<string> testingresult;
+        public List<string> Headers;
+        public List<string> Datas;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -26,10 +26,9 @@ namespace CheckDatabaseAspDotNetWeb.View.ThemeView
         protected void btnEnterTable_Click(object sender, EventArgs e)
         {
             isEnterTable = true;
-           var data = GetData(isEnterTable, txtDbName.Text, txtTableName.Text);
-            //testingData = data.Headers;
-            //testingresult = data.Data;
-
+            var data = GetData(isEnterTable, txtDbName.Text, txtTableName.Text);
+            Headers = data.Headers;
+            Datas = data.Data;
         }
 
         protected DynamicDataResponseModel GetData(bool isEnterTable = false, string dbName = null, string tableName = null)
@@ -41,12 +40,13 @@ namespace CheckDatabaseAspDotNetWeb.View.ThemeView
                 reqModel.DbName = dbName;
                 reqModel.TableName = tableName;
                 var result = DA_GetDataController.GetData(reqModel);
-                var jsonString = result.Data;
+                //var jsonString = result.Data;
 
-                var de = new DynamicTesteingModel
-                {
-                    Data = JsonConvert.DeserializeObject<List<dynamic>>(jsonString)
-                };
+                //var de = new DynamicTesteingModel
+                //{
+                //    Data = JsonConvert.DeserializeObject<List<dynamic>>(jsonString)
+                //};
+
 
                 //var jsonString = JsonConvert.DeserializeObject<>(model.Data);
                 //var obj = JObject.Parse(model.Data);

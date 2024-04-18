@@ -37,18 +37,18 @@ namespace CheckDatabaseAspDotNetWeb.Controller.GetData
                                 adapter.Fill(dt);
                                 List<string> headers = new List<string>();
                                 List<string> data = new List<string>();
-                                model.Data = JsonConvert.SerializeObject(dt, Formatting.Indented);
-                                //foreach (DataRow r in dt.Rows)
-                                //{
-                                //    foreach (DataColumn c in dt.Columns)
-                                //    {
-                                //        headers.Add(c.ColumnName);
-                                //        data.Add(r[c].ToString());
-                                //    }
-                                //}
-                                //model.Headers = headers;
-                                //model.Headers = model.Headers.Distinct().ToList();
-                                //model.Data = data;
+                                //model.Data = JsonConvert.SerializeObject(dt, Formatting.Indented);
+                                foreach (DataRow r in dt.Rows)
+                                {
+                                    foreach (DataColumn c in dt.Columns)
+                                    {
+                                        headers.Add(c.ColumnName);
+                                        data.Add(r[c].ToString());
+                                    }
+                                }
+                                model.Headers = headers;
+                                model.Headers = model.Headers.Distinct().ToList();
+                                model.Data = data;
 
                             }
                         }

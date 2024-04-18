@@ -29,24 +29,26 @@
                     <table class="table table-bordered" id="dataTableName" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <%foreach (var result in testingData)
+                                <%foreach (var result in Headers)
                                     {  %>
                                 <th><%=result %></th>
-                                <%} %><a href="EnterTable.aspx">EnterTable.aspx</a>
+                                <%} %>
                             </tr>
                         </thead>
                         <tbody>
+                            <%int rowCount = Datas.Count / Headers.Count; %>
+                            <%for (int i = 0; i < rowCount; i++)
+                                { %>
+                            <tr>
+                                <%for (int j = 0; j < Headers.Count; j++)
+                                    { %>
 
-                            <%for (int i = 1; i <= testingData.Count ; i++)
-                                {
+                                <td><%=Datas[i*Headers.Count+j]%></td>
 
-                                } %>
-                            <%-- <%foreach (var result in testingData)
-                          {  %>
-                      <tr>
-                          <td><%=result%></td>
-                      </tr>
-                      <%} %>--%>
+
+                                <%} %>
+                            </tr>
+                            <%} %>
                         </tbody>
                     </table>
                 </div>
