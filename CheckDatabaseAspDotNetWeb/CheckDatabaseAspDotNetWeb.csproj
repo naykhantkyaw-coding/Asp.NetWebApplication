@@ -1760,6 +1760,7 @@
     <Content Include="lib\vendor\jquery\jquery.min.js" />
     <Content Include="lib\vendor\jquery\jquery.slim.js" />
     <Content Include="lib\vendor\jquery\jquery.slim.min.js" />
+    <Content Include="View\ThemeView\DeleteForm.aspx" />
     <Content Include="View\ThemeView\EditForm.aspx" />
     <Content Include="View\ThemeView\EnterDbThemeForm.aspx" />
     <Content Include="View\SimpleView\FirstPage.aspx" />
@@ -1780,6 +1781,13 @@
     <Compile Include="Model\DbNamesModel.cs" />
     <Compile Include="Model\TableNameModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\ThemeView\DeleteForm.aspx.cs">
+      <DependentUpon>DeleteForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ThemeView\DeleteForm.aspx.designer.cs">
+      <DependentUpon>DeleteForm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\ThemeView\EditForm.aspx.cs">
       <DependentUpon>EditForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
