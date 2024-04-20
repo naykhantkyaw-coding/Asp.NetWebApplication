@@ -12,18 +12,30 @@ namespace CheckDatabaseAspDotNetWeb.Controller.GetData
 {
     public class DA_GetDataController
     {
+        public static string GetConnectionString(string dbName)
+        {
+            string connectionString = string.Empty;
+            BL_GetServerNameController getServerName = new BL_GetServerNameController();
+            string serverName = getServerName.GetServerName();
+            if (serverName != null && dbName != null)
+            {
+                connectionString = $"Data Source = {serverName};Initial Catalog ={dbName};Integrated Security = true;";
+            }
+            return connectionString;
+        }
         public static DynamicDataResponseModel GetData(TableNameRequestModel reqModel)
         {
             DynamicDataResponseModel model = new DynamicDataResponseModel();
-            BL_GetServerNameController getServerName = new BL_GetServerNameController();
+            //BL_GetServerNameController getServerName = new BL_GetServerNameController();
             string connectionString = string.Empty;
             try
             {
-                string serverName = getServerName.GetServerName();
-                if (serverName != null && reqModel.DbName != null)
-                {
-                    connectionString = $"Data Source = {serverName};Initial Catalog ={reqModel.DbName};Integrated Security = true;";
-                }
+                //string serverName = getServerName.GetServerName();
+                //if (serverName != null && reqModel.DbName != null)
+                //{
+                //    connectionString = $"Data Source = {serverName};Initial Catalog ={reqModel.DbName};Integrated Security = true;";
+                //}
+                connectionString = GetConnectionString(reqModel.DbName);
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
@@ -61,6 +73,23 @@ namespace CheckDatabaseAspDotNetWeb.Controller.GetData
                 model.Response = ex.GetResposeError();
             }
 
+            return model;
+        }
+
+        public static DynamicDataResponseModel GetDataById(DataRequestModel reqModel)
+        {
+            DynamicDataResponseModel model = new DynamicDataResponseModel();
+            try
+            {
+                using (SqlConnection con = new SqlConnection())
+                {
+
+                }
+            }
+            catch (Exception ex)
+            {
+                model.Response = ex.GetResposeError();
+            }
             return model;
         }
     }

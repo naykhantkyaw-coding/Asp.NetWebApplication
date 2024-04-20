@@ -1776,6 +1776,7 @@
     <Compile Include="Controller\GetDbName\DA_GetDbNameController.cs" />
     <Compile Include="Controller\GetTableName\DA_GetTableNameController.cs" />
     <Compile Include="Model\BaseResponseModel.cs" />
+    <Compile Include="Model\DataModel.cs" />
     <Compile Include="Model\DynamicDataModel.cs" />
     <Compile Include="Model\ServerNameModel.cs" />
     <Compile Include="Model\DbNamesModel.cs" />

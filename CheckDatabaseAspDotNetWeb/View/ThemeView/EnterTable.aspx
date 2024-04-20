@@ -50,8 +50,8 @@
 
                                 <%} %>
                                 <td>
-                                    <a href="EditForm.aspx?id=<%=itemId %>"><i class="fa-solid fa-pen-to-square"></i> Edit</a> |
-                                    <a href="DeleteForm.aspx?id=<%=itemId %>"><i class="fa-solid fa-trash" style="color: #ee1127;"></i> Delete</a>
+                                    <a href="EditForm.aspx?id=<%=itemId %>&name=<%=txtTableName.Text %>"><i class="fa-solid fa-pen-to-square"></i>Edit</a> |
+                                    <a href="DeleteForm.aspx?id=<%=itemId %>"><i class="fa-solid fa-trash" style="color: #ee1127;"></i>Delete</a>
                                 </td>
                             </tr>
                             <%} %>
@@ -64,10 +64,10 @@
     </form>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="jsScript" runat="server">
-     <script>
-     new DataTable('#dataTableName', {
-         pageLength: 4,
-         lengthChange: false
-     });
-     </script>
+    <script>
+        new DataTable('#dataTableName', {
+            pageLength: 4,
+            lengthChange: false
+        });
+    </script>
 </asp:Content>
