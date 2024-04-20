@@ -16,6 +16,8 @@ namespace CheckDatabaseAspDotNetWeb.View.ThemeView
         public string tableNameStr = string.Empty;
         public string dbNameStr = string.Empty;
         public string idNameStr = string.Empty;
+        public DynamicDataResponseModel resModel = new DynamicDataResponseModel();
+        public List<TextBox> TextBoxes = new List<TextBox>();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -40,7 +42,21 @@ namespace CheckDatabaseAspDotNetWeb.View.ThemeView
                         IdName = idName,
                         Id = id,
                     };
-                    DA_GetDataController.GetDataById(reqModel);
+                    resModel = DA_GetDataController.GetDataById(reqModel);
+
+                    for (int i = 0; i < resModel.Data.Count; i++)
+                    {
+                        var textBox = new TextBox();
+                        textBox.ID = "txt" + i;
+                        textBox.Text = resModel.Data[i];
+                        textBox.CssClass = "form-control";
+                        textBox.Attributes.Add("runat", "server"); // Ensure it's a server-side control
+                        textBox.Attributes.Add("required", "required"); // Add the 'required' attribute
+                        //TextBoxes.Add(textBox); // Add the TextBox to the list
+                        //form1.Controls.Add(textBox); // Add the TextBox to the page
+                        PlaceHolder1.Controls.Add(textBox);
+
+                    }
                 }
             }
 
