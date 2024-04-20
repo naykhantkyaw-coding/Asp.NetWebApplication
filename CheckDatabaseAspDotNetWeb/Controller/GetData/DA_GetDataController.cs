@@ -79,11 +79,35 @@ namespace CheckDatabaseAspDotNetWeb.Controller.GetData
         public static DynamicDataResponseModel GetDataById(DataRequestModel reqModel)
         {
             DynamicDataResponseModel model = new DynamicDataResponseModel();
+            string connectionString = string.Empty;
             try
             {
-                using (SqlConnection con = new SqlConnection())
+                connectionString = GetConnectionString(reqModel.DbName);
+                using (SqlConnection con = new SqlConnection(connectionString))
                 {
-
+                    con.Open();
+                    using (SqlCommand cmd = new SqlCommand($"select * from {reqModel.TableName} where {reqModel.IdName} = {reqModel.Id} ",con))
+                    {
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            DataTable dt = new DataTable();
+                            adapter.Fill(dt);
+                            List<string> headers = new List<string>();
+                            List<string> data = new List<string>();
+                            //model.Data = JsonConvert.SerializeObject(dt, Formatting.Indented);
+                            foreach (DataRow r in dt.Rows)
+                            {
+                                foreach (DataColumn c in dt.Columns)
+                                {
+                                    headers.Add(c.ColumnName);
+                                    data.Add(r[c].ToString());
+                                }
+                            }
+                            model.Headers = headers;
+                            model.Headers = model.Headers.Distinct().ToList();
+                            model.Data = data;
+                        }
+                    }
                 }
             }
             catch (Exception ex)

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CheckDatabaseAspDotNetWeb.Controller.GetData;
+using CheckDatabaseAspDotNetWeb.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -12,24 +14,33 @@ namespace CheckDatabaseAspDotNetWeb.View.ThemeView
     {
         public string idresult = string.Empty;
         public string tableNameStr = string.Empty;
+        public string dbNameStr = string.Empty;
+        public string idNameStr = string.Empty;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                // Check if the 'id' parameter exists in the query string
-                if (Request.QueryString["id"] != null && Request.QueryString["name"] != null)
+                if (Request.QueryString["id"] != null &&
+                     Request.QueryString["dbName"] != null &&
+                    Request.QueryString["tableName"] != null &&
+                    Request.QueryString["idName"] != null)
                 {
-                    // Retrieve the value of the 'id' parameter
                     string id = Request.QueryString["id"];
-                    string tableName = Request.QueryString["name"];
-                    // Use the 'id' parameter to fetch the corresponding data from your data source
-                    // For example:
-                    // var item = YourDataRepository.GetItemById(id);
-
-                    // Now you have the id, you can use it in your page logic
-                    // For example, you can assign it to a hidden field to access it in client-side code
+                    string dbName = Request.QueryString["dbName"];
+                    string tableName = Request.QueryString["tableName"];
+                    string idName = Request.QueryString["idName"];
                     idresult = id;
+                    dbNameStr = dbName;
                     tableNameStr = tableName.Trim();
+                    idNameStr = idName.Trim();
+                    DataRequestModel reqModel = new DataRequestModel()
+                    {
+                        DbName = dbName,
+                        TableName = tableName,
+                        IdName = idName,
+                        Id = id,
+                    };
+                    DA_GetDataController.GetDataById(reqModel);
                 }
             }
 
